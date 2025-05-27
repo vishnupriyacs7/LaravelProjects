@@ -11,8 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('file_upload_models', function (Blueprint $table) {
+        Schema::create('upload', function (Blueprint $table) {
             $table->id();
+            $table->string('image'); // Assuming 'image' is a string field for file paths or names
             $table->timestamps();
         });
     }
