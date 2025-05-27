@@ -23,7 +23,7 @@ Route::get('/view',[NewUserController::class,'viewdata']);
 Route::get('/query',[DBQuery::class,'data']);
 
 //form handling
-//Route::get('/',[Form::class,'register']);
+// Route::get('/',[Form::class,'register']);
 Route::post('/submit',[Form::class,'submit']);
 Route::get('/success', [Form::class,'msg']);
 
