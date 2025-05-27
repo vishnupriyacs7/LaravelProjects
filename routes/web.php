@@ -4,6 +4,7 @@ use App\Http\Controllers\DBQuery;
 use App\Http\Controllers\Form;
 use App\Http\Controllers\NewUserController;
 use App\Http\Controllers\StudentList;
+use App\Http\Controllers\FileUpload;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
@@ -45,6 +46,11 @@ Route::get('/newwelcome', function () {
     $array = ["php", "laravel", "wordpress"]; 
     return view('newpage', ['variable' => $value,'array' =>$array]);
 });
+
+//fileupload
+Route::get('/form',[FileUpload::class,'formView'])->name('formView');
+Route::post('/fileupload',[FileUpload::class,'fileupload'])->name('fileupload');
+
     
     
 
