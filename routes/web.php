@@ -50,7 +50,7 @@ Route::get('/newwelcome', function () {
 //fileupload
 Route::get('/form',[FileUpload::class,'formView'])->name('formView');
 Route::post('/fileupload',[FileUpload::class,'fileupload'])->name('fileupload');
-
+Route::get('/file/{id}', [FileUpload::class, 'displayFile'])->name('displayFile');
     
     
 

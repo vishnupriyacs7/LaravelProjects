@@ -33,4 +33,10 @@ class FileUpload extends Controller
         }
     }
 
+    public function displayFile($id){
+        $fileModel = FileUploadModel::find($id);
+        return view('displayfile', compact('fileModel'));
+    }
+
+
 }
