@@ -7,7 +7,7 @@
 </head>
 <body>
     @if($fileModel->image)
-        <img src="{{ asset('uploads/' . $fileModel->image) }}" alt="Image">
+        <img src="{{ asset('uploads/' . $fileModel->image) }}" alt="Image" width="300" height="200">    
     @else
         <p>No image found</p>
     @endif
