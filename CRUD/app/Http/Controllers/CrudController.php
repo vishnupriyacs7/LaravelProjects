@@ -19,9 +19,12 @@ class CrudController extends Controller
 
     public function store(Request $request){
         $item = new CrudModel;
-        $item->title = $request->input('title');
-        $item->description = $request->input('description');
+        $item->name = $request->input('name');
+        $item->email = $request->input('email');
+        $item->phone = $request->input('phone');
+        $item->address = $request->input('address');
         $item->save();
+
         return redirect('/items');
     }
 
