@@ -28,6 +28,12 @@ class CrudController extends Controller
         return redirect('/items');
     }
 
+    public function edit($id){
+        $item = CrudModel::findOrFail($id);
+        return view('operations.edit', compact('item'));
+    }
+
+
     public function update(Request $request, $id){
         $item = CrudModel::findOrFail($id);
         $item->title = $request->input('title');
