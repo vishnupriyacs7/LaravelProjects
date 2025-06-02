@@ -8,31 +8,34 @@ use Illuminate\Http\Request;
 class CrudController extends Controller
 {
     public function index(){
-        $tasks = CrudModel::all(); 
-        return view('operations.view',compact('tasks'));
-    }
-    public function show($id){
-        $task = CrudModel::findOrFail($id);
-        return view('operations.show', compact('task'));
-    }
-    public function store(Request $request){
-        $task = new CrudModel;
-        $task->title = $request->input('title');
-        $task->description = $request->input('description');
-        $task->save();
-        return redirect('/tasks');
-    }
-    public function update(Request $request, $id){
-        $task = CrudModel::findOrFail($id);
-        $task->title = $request->input('title');
-        $task->description = $request->input('description');
-        $task->save();
-        return redirect('/tasks');
-    }
-    public function destroy($id){
-        $task = CrudModel::findOrFail($id);
-        $task->delete();
-        return redirect('/tasks');
+        $items = CrudModel::all(); 
+        return view('operations.view', compact('items'));
     }
 
+    public function show($id){
+        $item = CrudModel::findOrFail($id);
+        return view('operations.show', compact('item'));
+    }
+
+    public function store(Request $request){
+        $item = new CrudModel;
+        $item->title = $request->input('title');
+        $item->description = $request->input('description');
+        $item->save();
+        return redirect('/items');
+    }
+
+    public function update(Request $request, $id){
+        $item = CrudModel::findOrFail($id);
+        $item->title = $request->input('title');
+        $item->description = $request->input('description');
+        $item->save();
+        return redirect('/items');
+    }
+
+    public function destroy($id){
+        $item = CrudModel::findOrFail($id);
+        $item->delete();
+        return redirect('/items');
+    }
 }
