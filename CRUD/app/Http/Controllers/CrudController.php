@@ -36,8 +36,10 @@ class CrudController extends Controller
 
     public function update(Request $request, $id){
         $item = CrudModel::findOrFail($id);
-        $item->title = $request->input('title');
-        $item->description = $request->input('description');
+        $item->name = $request->input('name');
+        $item->email = $request->input('email');
+        $item->phone = $request->input('phone');
+        $item->address = $request->input('address');
         $item->save();
         return redirect('/items');
     }
